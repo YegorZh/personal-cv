@@ -1,11 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Gothic+A1:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gothic+A1:wght@400;500;600;700&display=swap');
 
 :root {
     --header-height: 3rem;
 
     /* Colors */
     --title-color: black;
-    --text-color: rgb(30, 30, 30);
+    --text-color: rgb(60, 60, 60);
     --text-color-light: rgb(120, 120, 120);
     --container-color: #fafafa;
     --container-color-alt: #fefefe;
@@ -66,7 +66,7 @@ h1,
 h2,
 h3 {
     color: var(--title-color);
-    font-weight: var(--font-medium);
+    font-weight: var(--font-semibold);
 }
 
 ul {
@@ -201,4 +201,66 @@ img {
 /* Active menu */
 .active-link {
     color: var(--title-color);
+}
+
+/* Home */
+.home {
+    position: relative;
+}
+
+.home__container{
+    gap: 2.5rem;
+}
+
+.home__data{
+    gap: .5rem;
+    text-align: center;
+}
+
+.home__img {
+    max-width: 140px;
+    height: 140px;
+    border-radius: 0 50%;
+    justify-self: center;
+    margin-bottom: var(--mb-1);
+}
+
+.home__title{
+    font-size: var(--h1-font-size);
+}
+
+.home__profession{
+    font-size: var(--normal-font-size);
+    margin-bottom: var(--mb-1);
+}
+
+.home__adress{
+    gap: 1.2rem;
+}
+
+.home__information{
+    display: flex;
+    align-items: center;
+    font-size: var(--smaller-font-size);
+}
+
+.home__icon{
+    font-size: 1.2rem;
+    margin-right: 0.3rem;
+}
+
+.home__button-pdf{
+    display: inline-block;
+    border: 1px solid var(--text-color);
+    color: var(--title-color);
+    border-radius: 0.3rem;
+    padding: 0.7rem 1.2em;
+    font-weight: var(--font-semibold);
+    margin-top: var(--mb-1);
+    transition: .3s;
+}
+
+.home__button-pdf:hover{
+    background-color: var(--text-color);
+    color: var(--container-color);
 }

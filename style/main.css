@@ -86,7 +86,7 @@ img {
 /* Class */
 
 .section {
-    padding: 1.5rem;
+    padding: 1.5rem 0;
 }
 
 .section-title {
@@ -95,6 +95,7 @@ img {
     font-weight: var(--font-medium);
     text-transform: uppercase;
     letter-spacing: .35rem;
+    margin-bottom: var(--mb-2);
 }
 
 /* Layout */
@@ -251,7 +252,7 @@ img {
 
 .home__button-pdf{
     display: inline-block;
-    border: 1px solid var(--text-color);
+    border: 2px solid var(--text-color);
     color: var(--title-color);
     border-radius: 0.3rem;
     padding: 0.7rem 1.2em;
@@ -263,4 +264,49 @@ img {
 .home__button-pdf:hover{
     background-color: var(--text-color);
     color: var(--container-color);
+}
+
+/* Education */
+.education__container{
+    display: flex;
+    flex-direction: column;
+    gap: var(--mb-1);
+}
+
+.education__title {
+    font-size: var(--h3-font-size);
+    color: var(--title-color);
+}
+
+.education__studies,
+.education__year {
+    font-size: var(--smaller-font-size);
+}
+
+/* Skills */
+.skills .section-title {
+    text-align: center;
+}
+
+.skills__title{
+    font-size: var(--h3-font-size);
+    color: var(--title-color);
+    text-align: center;
+}
+
+.skills__container{
+    gap: var(--mb-2);
+}
+
+.skills__data {
+    display: flex;
+    justify-content: space-between;
+}
+
+.skills__item {
+    font-size: var(--smaller-font-size);
+    text-align: center;
+    border: 1px solid var(--text-color);
+    padding: 0.2rem 1rem;
+    border-radius: 15%/60%;
 }

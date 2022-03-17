@@ -292,21 +292,34 @@ img {
     font-size: var(--h3-font-size);
     color: var(--title-color);
     text-align: center;
+    margin-bottom: var(--mb-1);
 }
 
 .skills__container{
-    gap: var(--mb-2);
+    gap: var(--mb-0);
 }
 
 .skills__data {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    align-items: center;
 }
 
 .skills__item {
-    font-size: var(--smaller-font-size);
+    margin: 0 var(--mb-0);
+    margin-bottom: var(--mb-1);
+    color: var(--text-color-light);
     text-align: center;
-    border: 1px solid var(--text-color);
-    padding: 0.2rem 1rem;
+    border: 1px solid var(--text-color-light);
+    padding: 0.15rem 0.75rem;
     border-radius: 15%/60%;
+}
+
+.skills__item--accent {
+    color: var(--text-color);
+    border: 1px solid var(--text-color);
+}
+
+.skills__info{
+    margin-bottom: var(--mb-1);
 }

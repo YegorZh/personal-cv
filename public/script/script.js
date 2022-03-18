@@ -23,9 +23,9 @@ const scrollActive = () => {
         const section = current;
         const sectionHeight = section.offsetHeight, sectionTop = section.offsetTop - 50, sectionId = current.getAttribute('id');
         if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight)
-            (_a = document.querySelector('nav__menu a[href*=' + sectionId + ']')) === null || _a === void 0 ? void 0 : _a.classList.add('active-link');
+            (_a = document.querySelector(`.nav__menu a[href*="#${sectionId}"]`)) === null || _a === void 0 ? void 0 : _a.classList.add('active-link');
         else
-            (_b = document.querySelector('nav__menu a[href*=' + sectionId + ']')) === null || _b === void 0 ? void 0 : _b.classList.remove('active-link');
+            (_b = document.querySelector(`.nav__menu a[href*="#${sectionId}"]`)) === null || _b === void 0 ? void 0 : _b.classList.remove('active-link');
     });
 };
 window.addEventListener('scroll', scrollActive);

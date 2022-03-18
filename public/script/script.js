@@ -1,4 +1,13 @@
 "use strict";
+var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
+    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
 const showMenu = (toggleId, navId, toggleIconId) => {
     const toggle = document.getElementById(toggleId), nav = document.getElementById(navId), icon = document.getElementById(toggleIconId);
     if (toggle && nav && icon) {
@@ -29,3 +38,29 @@ const scrollActive = () => {
     });
 };
 window.addEventListener('scroll', scrollActive);
+function scaleCv() {
+    document.body.classList.add('scale-cv');
+}
+function removeScale() {
+    document.body.classList.remove('scale-cv');
+}
+function downloadPDF(elem) {
+    let opt = {
+        margin: 0,
+        filename: 'YegorZhukovskiyResume.pdf',
+        image: { type: 'jpeg', quality: 0.98 },
+        html2canvas: { scale: 4 },
+        jsPDF: { format: 'a4', orientation: 'portrait' }
+    };
+    //@ts-ignore
+    return html2pdf(elem, opt);
+}
+let resumeButton = document.getElementById('button-pdf');
+resumeButton === null || resumeButton === void 0 ? void 0 : resumeButton.addEventListener('click', () => __awaiter(void 0, void 0, void 0, function* () {
+    let toPDF = document.getElementById('to-pdf');
+    if (!toPDF)
+        return;
+    scaleCv();
+    yield downloadPDF(toPDF);
+    removeScale();
+}));

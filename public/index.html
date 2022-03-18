@@ -58,7 +58,7 @@
         </nav>
     </header>
     <!-- Home -->
-    <main class="l-main bd-container">
+    <main class="l-main bd-container" id="to-pdf">
         <div class="resume">
             <div class="resume__left">
                 <section class="home" id="home">
@@ -70,7 +70,7 @@
                             <h3 class="home__profession">Web developer</h3>
 
                             <div>
-                                <a download="" href="pdf/ResumeCv.pdf" class="home__button-pdf">Download</a>
+                                <a download="" href="pdf/YegorZhukovskiyResume.pdf" class="home__button-pdf">Download</a>
                             </div>
                         </div>
 
@@ -91,6 +91,8 @@
                             <span class="home__information">
                                 <i class='bx bxl-telegram home__icon'></i>@yegor_zhukovskiy
                             </span>
+
+                            <i class='bx bxs-download generate-pdf' title="Download PDF" id="button-pdf"></i>
                         </div>
                     </div>
                 </section>
@@ -272,7 +274,7 @@
             </div>
         </div>
     </main>
+    <script src="./script/html2pdf.js"></script>
     <script src="./script/script.js"></script>
 </body>
-
 </html>

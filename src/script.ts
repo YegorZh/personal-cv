@@ -41,3 +41,34 @@ const scrollActive = () => {
     })
 }
 window.addEventListener('scroll', scrollActive);
+
+function scaleCv(){
+    document.body.classList.add('scale-cv');
+
+}
+
+function removeScale(){
+    document.body.classList.remove('scale-cv');
+}
+
+function downloadPDF(elem: HTMLElement) {
+    let opt = {
+        margin:       0,
+        filename:     'YegorZhukovskiyResume.pdf',
+        image:        { type: 'jpeg', quality: 0.98 },
+        html2canvas:  { scale: 4 },
+        jsPDF:        { format: 'a4', orientation: 'portrait' }
+      };
+      //@ts-ignore
+      return html2pdf(elem, opt);
+}
+
+let resumeButton = document.getElementById('button-pdf');
+resumeButton?.addEventListener('click', async () => {
+    let toPDF = document.getElementById('to-pdf');
+    if(!toPDF) return;
+    scaleCv();
+    await downloadPDF(toPDF); 
+    removeScale();
+});
+

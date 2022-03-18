@@ -8,7 +8,7 @@
     --text-color: rgb(45, 45, 45);
     --text-color-light: rgb(120, 120, 120);
     --container-color: #fafafa;
-    --container-color-alt: #fefefe;
+    --container-color-alt: #f4f4f4;
     --body-color: #fcfcfc;
 
     /* Fonts */
@@ -296,10 +296,6 @@ img {
     margin-bottom: var(--mb-1);
 }
 
-.skills__container{
-    gap: var(--mb-0);
-}
-
 .skills__data {
     display: flex;
     justify-content: center;
@@ -308,6 +304,7 @@ img {
 
 .skills__item {
     display: inline-block;
+    font-size: var(--normal-font-size);
     margin: 0 var(--mb-0);
     margin-bottom: var(--mb-1);
     color: var(--text-color-light);
@@ -329,7 +326,7 @@ img {
 .skills__info{
     margin-bottom: var(--mb-1);
 }
-
+/* Projects */
 .projects__container{
     gap: 1.25rem;
 }
@@ -349,6 +346,7 @@ img {
 
 .projects__item{
     display: block;
+    position: relative;
     margin-top: var(--mb-0);
     font-size: var(--small-font-size);
     padding-left: 0.65rem;
@@ -357,14 +355,14 @@ img {
 .projects__icon{
     font-size: 0.96rem;
     position: absolute;
-    left: 1.25rem;
+    left: -.25rem;
 }
 
 .projects__git{
     margin: 0;
     font-size: var(--smaller-font-size);
     display: flex;
-    justify-content: center;
+    justify-content: left;
 }
 
 .projects__git-icon{
@@ -377,10 +375,8 @@ img {
 }
 
 /* Interests */
-.interests {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.interests .section-title{
+    text-align: center;
 }
 
 .interests__container{
@@ -398,4 +394,78 @@ img {
 
 .interests__icon {
     font-size: 1.5rem;
+}
+
+/* Media Queries */
+/* Make font smaller in skills section on smaller devices */
+@media screen and (max-width: 340px) {
+    .skills__item {
+        font-size: var(--smaller-font-size);
+    }
+}
+/* Display skills as grid */
+@media screen and (min-width: 600px) {
+
+    .skills__container {
+        gap: 0;
+        grid-template-columns: 1fr 1fr;
+    }
+    
+    .skills__info--last{
+        align-self: center;
+        grid-column: span 2;
+    }
+    
+    .skills__item--last{
+        margin-bottom: var(--mb-1);
+    }
+
+    .skills__grid-wrapper {
+        display: flex;
+        justify-content: center;
+    }
+}
+
+/* Desktop */
+@media screen and (min-width: 968px) {
+    body{
+        margin: 3rem 0;
+    }
+
+    .bd-container {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .l-header {
+        display: none;
+    }
+
+    .resume{
+        display: grid;
+        grid-template-columns: .5fr 1fr;
+        background-color: var(--container-color);
+        box-shadow: 0 0 8px rgba(13,12,12,.15);
+    }
+
+    .resume__left{
+        background-color: var(--container-color-alt);
+    }
+
+    .resume__left,
+    .resume__right {
+        padding: 0 1.5rem;
+    }
+
+    .home__container {
+        gap: 1.5rem;
+    }
+
+    .home__button-pdf {
+        display: none;
+    }
+
+    .interests .section-title {
+        align-items: left;
+    }
 }

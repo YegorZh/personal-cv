@@ -2,7 +2,7 @@ const express = require('express');
 import { Express } from 'express';
 const app = express() as Express;
 
-app.use(express.static('./public'));
+app.use(express.static('./docs'));
 
 const port: string = process.env.PORT || '8000';
 app.listen(port, () => console.log('Listening in port ' + port));
